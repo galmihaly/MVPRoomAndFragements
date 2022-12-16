@@ -11,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import hu.unideb.inf.mvproomandfragements.Database.Models.PersonEntity;
 import hu.unideb.inf.mvproomandfragements.Database.Room;
 import hu.unideb.inf.mvproomandfragements.Fragments.Adapters.DatabaseFragmentViewAdapter;
 import hu.unideb.inf.mvproomandfragements.Fragments.Interfaces.IDatabaseFragmentView;
