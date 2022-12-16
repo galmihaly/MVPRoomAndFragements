@@ -25,6 +25,7 @@ import hu.unideb.inf.mvproomandfragements.R;
 
 public class DatabaseFragment extends BaseFragment implements IDatabaseFragmentView {
 
+
     private View view;
     private Room room;
     private RecyclerView dbFragRecycleView;
