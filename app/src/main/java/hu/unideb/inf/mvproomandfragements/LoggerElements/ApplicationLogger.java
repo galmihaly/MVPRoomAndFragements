@@ -25,11 +25,6 @@ public class ApplicationLogger {
             case INFORMATION: myLogObjects.add(ApplicationLogger.info(message));
             default:
         }
-
-        for (int i = 0; i < myLogObjects.size(); i++) {
-            Log.d("d", myLogObjects.get(i).toString());
-        }
-        Log.d("mérete", String.valueOf(myLogObjects.size()));
     }
 
     public static LogObject info(String errorMeesage){
@@ -45,7 +40,6 @@ public class ApplicationLogger {
         LogObject logObject = new LogObject(LogLevel.INFORMATION, stackTraceElement, zonedDateTime, errorMeesage);
 
         Log.i(null, logObject.toString());
-
         MethodCallCounter.clear();
 
         return logObject;
@@ -67,7 +61,6 @@ public class ApplicationLogger {
         LogObject logObject = new LogObject(LogLevel.ERROR, stackTraceElement, zonedDateTime, errorMeesage);
 
         Log.e(null, logObject.toString());
-
         MethodCallCounter.clear();
 
         return logObject;

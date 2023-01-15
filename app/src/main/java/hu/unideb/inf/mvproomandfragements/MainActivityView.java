@@ -49,7 +49,7 @@ public class MainActivityView extends AppCompatActivity implements IMainActivity
             ApplicationLogger.addLogToList(LogLevel.INFORMATION, "Új addition fragment megnyitása!");
             mainActivityPresenter.addFragment(new AdditionItemsFragment());
         });
-        //addItemButton.setOnClickListener(view -> mainActivityPresenter.addFragment(new AdditionItemsFragment()));
+
     }
 
     @Override
