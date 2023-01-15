@@ -1,5 +1,6 @@
 package hu.unideb.inf.mvproomandfragements.Fragments;
 
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 
 
@@ -45,5 +46,16 @@ public class AdditionItemsFragment extends BaseFragment implements IAdditionItem
         ));
 
         return view;
+    }
+
+    @Override
+    public void addPersonToRoomDatabase(PersonEntity personEntity) {
+
+        try {
+            room.personEntityDAO().setPerson(personEntity);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

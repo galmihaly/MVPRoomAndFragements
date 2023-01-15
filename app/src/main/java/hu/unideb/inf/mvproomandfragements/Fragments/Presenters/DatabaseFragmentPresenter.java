@@ -26,6 +26,7 @@ public class DatabaseFragmentPresenter implements IDatabaseFragmentPresenter {
     }
 
     public void clearDB(){
-        room.personEntityDAO().clearDB();
+
+        iDatabaseFragmentView.clearRoomDatabase();
     }
 }

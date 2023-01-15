@@ -13,12 +13,12 @@ import hu.unideb.inf.mvproomandfragements.Database.Models.PersonEntity;
 public interface PersonEntityDAO {
 
     @Query("SELECT id, firstName, lastName FROM PeopleList")
-    LiveData<List<PersonEntity>> getAllPerson();
+    LiveData<List<PersonEntity>> getAllPerson() throws Exception;
 
     @Insert
-    void setPerson(PersonEntity personEntity);
+    void setPerson(PersonEntity personEntity) throws Exception;
 
     @Query("Delete from PeopleList")
-    public void clearDB();
+    void clearDB() throws Exception;
 
 }
