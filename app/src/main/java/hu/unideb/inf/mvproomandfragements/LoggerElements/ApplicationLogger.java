@@ -9,6 +9,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
 
+import hu.unideb.inf.mvproomandfragements.BuildConfig;
+
 public class ApplicationLogger {
 
     private static List<LogObject> myLogObjects = new ArrayList<>();
@@ -39,7 +41,8 @@ public class ApplicationLogger {
         String zonedDateTime = getUTCDateTimeString();
         LogObject logObject = new LogObject(LogLevel.INFORMATION, stackTraceElement, zonedDateTime, errorMeesage);
 
-        Log.i(null, logObject.toString());
+        if(BuildConfig.DEBUG) Log.i(null, logObject.toString());
+
         MethodCallCounter.clear();
 
         return logObject;
@@ -60,7 +63,8 @@ public class ApplicationLogger {
 
         LogObject logObject = new LogObject(LogLevel.ERROR, stackTraceElement, zonedDateTime, errorMeesage);
 
-        Log.e(null, logObject.toString());
+        if(BuildConfig.DEBUG) Log.e(null, logObject.toString());
+
         MethodCallCounter.clear();
 
         return logObject;

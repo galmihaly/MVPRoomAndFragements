@@ -48,7 +48,8 @@ public class LogObject {
     }
 
     public String getStackTraceMethodName(){
-        return this.stackTraceElement.getMethodName();
+
+        return this.stackTraceElement.getMethodName().split("\\$")[1];
     }
 
     //----------------------------------------------------------------------------------------------
@@ -57,7 +58,7 @@ public class LogObject {
     @Override
     public String toString() {
         if(this.loggingLevel.equals(LogLevel.ERROR) || this.loggingLevel.equals(LogLevel.FATAL)){
-            return String.format("[%s] -> (%s) - Üzenet: %s\n  Hiba helye: %s (%d. sor) | Osztálynév: %s | Függvény: %s",
+            return String.format("[%s] -> (%s) - Üzenet: %s\n  Hiba helye: %s (%d. sor) | Elérési út: %s | Függvény: %s",
                     this.getLoggingLevel(),
                     this.getZonedDateTime(),
                     this.getMessage(),
@@ -67,7 +68,7 @@ public class LogObject {
                     this.getStackTraceMethodName());
         }
 
-        return String.format("[%s] -> (%s) - Üzenet: %s\n  Keletkezési hely: %s (%d. sor) | Osztálynév: %s | Függvény: %s",
+        return String.format("[%s] -> (%s) - Üzenet: %s\n  Logolás helye: %s (%d. sor) | Elérési út: %s | Függvény: %s",
                 this.getLoggingLevel(),
                 this.getZonedDateTime(),
                 this.getMessage(),
