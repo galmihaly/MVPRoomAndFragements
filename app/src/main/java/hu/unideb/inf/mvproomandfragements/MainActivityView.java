@@ -22,9 +22,6 @@ public class MainActivityView extends AppCompatActivity implements IMainActivity
     private Button elementsButton;
     private Button addItemButton;
 
-    //Database
-    private Room room;
-
     //Presenter
     private MainActivityPresenter mainActivityPresenter;
 
@@ -40,7 +37,8 @@ public class MainActivityView extends AppCompatActivity implements IMainActivity
 
         setFragment(new DatabaseFragment());
 
-        room = Room.getDatabase(this);
+        //Database
+        Room room = Room.getDatabase(this);
 
         elementsButton.setOnClickListener(view -> {
             ApplicationLogger.addLogToList(LogLevel.INFORMATION, "Új element fragment megnyitása!");
