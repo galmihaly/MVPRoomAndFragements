@@ -47,12 +47,7 @@ public class LogObject {
         return this.stackTraceElement.getLineNumber();
     }
 
-    public String getStackTraceMethodName(){
-
-        return this.stackTraceElement.getMethodName().split("\\$")[1];
-    }
-
-    //----------------------------------------------------------------------------------------------
+    public String getStackTraceMethodName(){ return this.stackTraceElement.getMethodName().split("\\$")[1]; }
 
     @SuppressLint("DefaultLocale")
     @Override
