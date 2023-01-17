@@ -1,5 +1,6 @@
 package hu.unideb.inf.mvproomandfragements.Fragments.Adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,11 +33,15 @@ public class DatabaseFragmentViewAdapter extends RecyclerView.Adapter<DatabaseFr
 
     @Override
     public void onBindViewHolder(@NonNull DatabaseFragmentViewHolder holder, int position) {
-        holder.getPersonItem().setText(personEntityList.get(position).toString());
+        if(personEntityList != null){
+            holder.getPersonItem().setText(personEntityList.get(position).toString());
+        }
     }
 
     @Override
     public int getItemCount() {
+        if(personEntityList == null) return -1;
+
         return personEntityList.size();
     }
 

@@ -56,7 +56,10 @@ public class DoWorkHelper {
 
                     isNotDone = false;
                 }
-                else if (futureTask2.isCancelled()) Log.e("l:", "FutureTask2 is cancelled!!!");
+                else if (futureTask2.isCancelled()) {
+                    Log.e("l:", "FutureTask2 is cancelled!!!");
+                    isNotDone = false;
+                }
                 else Log.e("k:", "FutureTask2 is not complete!!!");
             }
         }

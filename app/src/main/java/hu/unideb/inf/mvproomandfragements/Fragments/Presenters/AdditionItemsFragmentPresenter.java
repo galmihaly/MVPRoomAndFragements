@@ -10,7 +10,6 @@ import hu.unideb.inf.mvproomandfragements.MainActivity.Helpers.DoWorkHelper;
 public class AdditionItemsFragmentPresenter implements IAdditionItemsFragmentPresenter {
 
     private IAdditionItemsFragmentView iAdditionItemsFragmentView;
-    private Room room = Room.getInstance();
 
     public AdditionItemsFragmentPresenter(IAdditionItemsFragmentView iAdditionItemsFragmentView) {
         this.iAdditionItemsFragmentView = iAdditionItemsFragmentView;
@@ -24,6 +23,6 @@ public class AdditionItemsFragmentPresenter implements IAdditionItemsFragmentPre
     }
 
     public void backEndTask(PersonEntity personEntity){
-        room.personEntityDAO().setPerson(personEntity);
+        iAdditionItemsFragmentView.addPersonToRoomDatabase(personEntity);
     }
 }
